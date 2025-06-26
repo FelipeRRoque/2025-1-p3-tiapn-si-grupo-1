@@ -9,7 +9,7 @@ module.exports = {
     dialect: process.env.DATABASE_DIALECT,
     dialectOptions: {
       ssl: {
-        require: false, // Desativa o uso de SSL
+        require: true, // Desativa o uso de SSL
         rejectUnauthorized: false,
       },
     },
