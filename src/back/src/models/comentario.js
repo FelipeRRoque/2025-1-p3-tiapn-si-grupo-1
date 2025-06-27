@@ -38,7 +38,7 @@ const Comentario = sequelize.define(
 );
 
   Comentario.belongsTo(Usuario, { foreignKey: 'usuario_id' });
-  Comentario.belongsTo(Flow, { foreignKey: 'flow_id' });
+  Comentario.belongsTo(Flow, { foreignKey: 'flow_id', onDelete: 'CASCADE',  hooks: true});
   Comentario.belongsTo(Comentario, { as: 'comentarioPai', foreignKey: 'comentario_pai_id' });
   Comentario.hasMany(Comentario, { as: 'respostas', foreignKey: 'comentario_pai_id' });
   

@@ -21,7 +21,7 @@ Usuario.hasMany(Flow, { foreignKey: "criado_por" });
 Flow.belongsTo(Usuario, { foreignKey: "criado_por" });
 
 Usuario.hasMany(Comentario, { foreignKey: "usuario_id" });
-Flow.hasMany(Comentario, { foreignKey: "flow_id" });
+Flow.hasMany(Comentario, { foreignKey: "flow_id", onDelete: 'CASCADE', hooks: true });
 Comentario.belongsTo(Usuario, { foreignKey: "usuario_id" });
 Comentario.belongsTo(Flow, { foreignKey: "flow_id" });
 
